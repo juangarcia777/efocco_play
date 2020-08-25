@@ -1,0 +1,52 @@
+body{
+	background-color:  rgb(47, 49, 54) !important;
+	color: #FFF !important;
+}
+
+.card-border:hover{border-right: 8px solid  #666}
+.card{background-color: rgb(32, 34, 37); border-color: #e1e1e1; color: #FFF !important}
+.body-assisti-aula{background-color: rgb(32, 34, 37); border-color: #e1e1e1; color: #FFF !important}
+.card div div h3{color: #FFF !important}
+.card h4{color: #FFF !important; font-weight: 400 !important}
+.widget-title-materia:before{background-color: #FFF !important}
+.post-meta-like span, .post-comment span, .post-share span{color: #FFF !important}
+.post-meta-like i, .post-comment i, .post-share i{color: #FFF !important}
+
+.author a{color: #FFF !important}
+.profile-desc p{color: #FFF !important}
+.small.desc{color: #FFF !important}
+
+.sticky{background-color: rgb(32, 34, 37) !important}
+.header-top-navigation ul li:hover a, .header-top-navigation ul li.active a{color: #FFF !important}
+.header-top-navigation ul li:hover a, .header-top-navigation ul li a{color: #FFF !important}
+.label-primary{background-color: #FFF !important; color: #333}
+
+.header-top-navigation ul li .message-dropdown {background-color: rgb(32, 34, 37) !important}
+.dropdown-title .recent-msg{color: #FFF !important}
+.dropdown-msg-list li.msg-list-item .msg-time{color: #FFF !important}
+
+.profile-setting-box .profile-dropdown{background-color: rgb(32, 34, 37) !important}
+h1, h2, h3, h4, h5, h6{color: #FFF !important}
+.profile-setting-box .profile-body ul li a{color: #FFF !important}
+.profile-setting-box .profile-head .mail{color: #FFF !important}
+
+.signup-inner--form{background-color: rgb(32, 34, 37) !important}
+.signup-inner--form .single-field{color: #FFF !important}
+.submit-btn{background-color:#000 !important; }
+
+.about-author-menu li a{color: #FFF !important}
+.share-text-box .btn-share{background-color: rgb(32, 34, 37) !important}
+.texto_aula_grande{color: #FFF !important}
+i.download-file{color: #FFF !important}
+.widget-title-questionario:before{background-color: #FFF !important; }
+.btn-peq{background-color: #000 !important;}
+a.link-voltar{color: #FFF !important}
+.photo-gallery-caption{background-color: rgb(32, 34, 37) !important}
+.friend-list-view {
+  background-color: rgb(32, 34, 37) !important
+}
+.add-frnd{color: #FFF !important}
+i.download-arquivo-aula{color: #FFF !important}
+.ok{color: #FFF !important}
+
+.post-settings ul li a{color: #333 !important}

@@ -1,0 +1,108 @@
+
+.colunas-info {
+    text-align: start !important;
+}
+
+.colunas-info .col-sm-9 {
+    padding-left: 0 !important;
+}
+
+.colunas-info .col-sm-6 {
+    padding-left: 0 !important;
+}
+
+.colunas-info .col-sm-4 {
+    padding-left: 0 !important;
+}
+
+.col-sm-6 {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px;
+}
+.col-sm-4 {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px;
+}
+
+.col-sm-3 {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px;
+}
+
+#logo {
+    max-width: 100%;
+}
+
+.cabecalho {
+    background-color: #f0f0f0;
+}
+    
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+      }
+
+    .table td, .table th{-webkit-print-color-adjust: exact !important;   color-adjust: exact !important;}
+.table-hover tbody tr:hover, .table-striped tbody tr:nth-of-type(odd), .thead-default th{-webkit-print-color-adjust: exact !important;   color-adjust: exact !important;}
+    * {
+    background:transparent !important;
+    color:#000 !important;
+    text-shadow:none !important;
+    filter:none !important;
+    -ms-filter:none !important;
+    }
+
+    body {
+    margin:0;
+    padding:0;
+    line-height: 1.4em;
+    }
+    #logo {
+        display:none
+    }
+    #imprimir {
+        display: none;
+    }
+    #conteudo {
+        margin-top: 0px !important;
+    }
+    .col-sm-9 {
+        text-align: center;
+    }
+    #titulo {
+        margin-right: 40px;
+    }
+    .line-1 {
+        display: flex;
+        flex-direction: row;
+    }
+    .line-2 {
+        display: flex;
+        flex-direction: row;
+    }
+    .line-3 {
+        display: flex;
+        flex-direction: row;
+    }
+    .line-4 {
+        display: flex;
+        flex-direction: row;
+    }
+    .col-sm-6 {
+        width: 50%;
+    }
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .cabecalho {
+        background-color: #f0f0f0;
+        -webkit-print-color-adjust: exact !important;
+    }
+    
+
+}

@@ -1,0 +1,98 @@
+.body-assisti-aula{padding: 30px 50px 60px 50px; background-color: #FFF; overflow-x: hidden; overflow-y:auto; height: calc(100% - 60px)}
+
+i.resp_correta{ font-size: 20px; margin-right: 0px; position: absolute; margin-top: 2px; color: #5cb85c }
+i.resp_errada{ font-size: 20px; margin-right: 0px; position: absolute; margin-top: 2px; color: #d9534f }
+h7{font-size:15px; font-weight: 500}
+
+span.responde_errado{font-size:14px; font-weight: 400; color: #d9534f }
+span.responde_correto{font-size:14px; font-weight: 400; color: #5cb85c}
+
+ul.nav-topo-aulas li{margin-right: 0 !important; padding: 0}
+ul.nav-topo-aulas li:first-child{width:25px}
+ul.nav-topo-aulas li:last-child{width: calc(100% - 30px); text-align: center; vertical-align: middle;}
+
+span.aviso-envio-sucesso{font-size: 16px; font-weight: 300}
+
+#nomes-aula-topo{font-size: 18px; font-weight: 500;  position: relative;  max-width: 70%; margin: auto; white-space: nowrap;  overflow: hidden; text-overflow:ellipsis; display: block;  }
+
+h4.bem-vindo{font-weight: 300}
+span.bem-vindo-texto{font-weight: 300; font-size: 16px}
+
+ul.itens-aula li{color:  #666; font-weight: 300; font-size: 13px; border-bottom: 1px solid #efefef; padding: 10px 15px}
+ul.itens-aula li:last-child {border-bottom: 0;}
+
+.card-body-aulas h4{font-size: 16px; position: relative !important; width:calc(100% - 20px) !important; }
+.cor-neutra-aulas{color: #999; font-weight: 300; font-size: 12px !important;}
+.aulas-materia{border-radius: 5px; padding: 0px !important; position: relative !important; margin-bottom: 10px !important}
+.card-body-aulas{padding: 8px 15px 21px 15px; }
+.header-aulas{background-color: #9900CC !important; color: #FFF !important}
+.header-aulas i{font-size: 20px; color: #fff}
+
+h4.widget-title-aulas{font-size: 18px}
+h4.widget-title-aulas i{font-size: 15px; color:#9900CC }
+
+
+div.nome-aula-click{width: 100% !important;}
+div.nome-aula-click a h4 i{color: #6699ff; font-size: 14px}
+a.nome-aula-click h4{color:#333 !important; font-weight: 400}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 10px;    
+    transition: all 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -350px;
+}
+
+
+.duvidas_botao_aulas {
+    background-color: #9900CC; height: 50px; width: 50px; position: fixed; right: 30px; bottom: 20px; border-radius: 50%; font-size: 28px; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); line-height: 51px; color: #FFF; text-align: center;
+    z-index: 99999;
+}
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 0px;
+    min-height: 100vh;
+    max-height: 100vh;
+    transition: all 0.3s;
+    background-color: #FFF;
+    overflow-x: hidden;    
+    overflow-y: hidden;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -350px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

@@ -1,0 +1,167 @@
+<IfModule mod_rewrite.c>
+    
+  #Bloquear listagem
+  Options -Indexes
+
+  RewriteEngine on
+
+  DefaultLanguage pt-BR
+  AddDefaultCharset UTF-8
+
+  RewriteCond %{SCRIPT_FILENAME} !-d
+  RewriteCond %{SCRIPT_FILENAME} !-f
+
+	#VIEWS**************************************************************	
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^home?$ views/home/home_gerencia.php [L,QSA]
+	RewriteRule ^gerencia?$ views/home/home_gerencia.php [L,QSA]
+
+	RewriteRule ^acesso?$ index.php?logout=1 [L,QSA]
+	RewriteRule ^logout?$ controlers/login/logout.php [L,QSA]
+	RewriteRule ^login?$ controlers/login/login.php [L,QSA]
+
+	RewriteRule ^relatorios/acessos?$ views/relatorios/acessos.php [L,QSA]
+	RewriteRule ^relatorios/avaliacao?$ views/relatorios/avaliacoes-aulas.php [L,QSA]
+	RewriteRule ^relatorios/gerencial?$ views/relatorios/gerencial.php [L,QSA]
+
+
+	#LISTAR**************************************************************
+
+	RewriteRule ^listar_alunos?$ views/listar/alunos.php [L,QSA]
+	RewriteRule ^listar_cursos?$ views/listar/cursos.php [L,QSA]
+	RewriteRule ^listar_disciplinas?$ views/listar/disciplinas.php [L,QSA]
+	RewriteRule ^listar_professores?$ views/listar/professores.php [L,QSA]
+	RewriteRule ^listar_turmas?$ views/listar/turmas.php [L,QSA]
+	RewriteRule ^listar_adm?$ views/listar/adm.php [L,QSA]
+	RewriteRule ^search_alunos?$ views/listar/search_alunos.php [L,QSA]
+
+
+	#CSV**************************************************************
+
+	RewriteRule ^csv_turma?$ views/csv_menu/upload_turma.php [L,QSA]
+	RewriteRule ^csv_alunos?$ views/csv_menu/upload_alunos.php [L,QSA]
+	RewriteRule ^csv_professor?$ views/csv_menu/upload_professor.php [L,QSA]
+
+	#CADASTRAR**************************************************************
+
+	RewriteRule ^cadastrar_alunos?$ views/cadastrar/alunos.php [L,QSA]
+	RewriteRule ^cadastrar_adm?$ views/cadastrar/adm.php [L,QSA]
+	RewriteRule ^cadastrar_cursos?$ views/cadastrar/cursos.php [L,QSA]
+	RewriteRule ^cadastrar_disciplinas?$ views/cadastrar/disciplinas.php [L,QSA]
+	RewriteRule ^cadastrar_professores?$ views/cadastrar/professores.php [L,QSA]
+	RewriteRule ^cadastrar_turma?$ views/cadastrar/turma.php [L,QSA]
+	RewriteRule ^cria-nova-aula?$ views/aulas/cadastra_nova_aula.php [L,QSA]
+
+	RewriteRule ^aloca_aula_turmas/(.*)?$ views/aulas/aloca_aula_turmas.php?id=$1 [L,QSA]
+	RewriteRule ^lista-aulas?$ views/aulas/lista-aulas.php [L,QSA]
+	RewriteRule ^edita-aula/(.*)?$ views/aulas/cadastra_nova_aula.php?id=$1 [L,QSA]
+	
+	RewriteRule ^ordena_aula/(.*)?$ views/aulas/ordena_aulas.php?id=$1 [L,QSA]
+
+
+	
+
+	#EDITAR**************************************************************
+
+	RewriteRule ^editar_alunos/(.*)?$ views/edit/alunos.php?id=$1 [L,QSA]
+	RewriteRule ^editar_cursos/(.*)?$ views/edit/cursos.php?id=$1 [L,QSA]
+	RewriteRule ^editar_disciplinas/(.*)?$ views/edit/disciplinas.php?id=$1 [L,QSA]
+	RewriteRule ^editar_professores/(.*)?$ views/edit/professores.php?id=$1 [L,QSA]
+	RewriteRule ^editar_turma/(.*)?$ views/edit/turma.php?id=$1 [L,QSA]
+	RewriteRule ^editar_perfil/(.*)?$ views/edit/perfil.php?id=$1 [L,QSA]
+
+	#INFOS**************************************************************
+
+	RewriteRule ^infos_alunos/(.*)?$ views/infos/alunos.php?id=$1 [L,QSA]
+	RewriteRule ^notas/(.*)/(.*)/(.*)?$ views/professor/infos/notas.php?turma=$1&aluno=$2&disciplina=$3 [L,QSA]
+	RewriteRule ^infos_cursos/(.*)?$ views/infos/cursos.php?id=$1 [L,QSA]
+	RewriteRule ^infos_disciplinas/(.*)?$ views/infos/disciplinas.php?id=$1 [L,QSA]
+	RewriteRule ^infos_professores/(.*)?$ views/infos/professores.php?id=$1 [L,QSA]
+	RewriteRule ^infos_turmas/(.*)?$ views/infos/turmas.php?id=$1 [L,QSA]
+
+	RewriteRule ^questionarios-respondidos/(.*)/(.*)?$ views/infos/questionarios-respondidos.php?id=$1&id_aula=$2 [L,QSA]
+	RewriteRule ^infos_questionario-respostas/(.*)/(.*)/(.*)?$ views/infos/infos_questionario-respostas.php?id=$1&id_aluno=$2&id_aula=$3 [L,QSA]
+
+	
+
+
+	#ALOCACOES**************************************************************
+
+	RewriteRule ^alunos_turmas?$ views/alocacoes/alunos-em-turmas.php [L,QSA]
+	RewriteRule ^alunos_turmas/(.*)?$ views/alocacoes/alunos-em-turmas.php?id_turma=$1 [L,QSA]
+	RewriteRule ^disciplinas_turmas?$ views/alocacoes/disciplinas-em-turmas.php [L,QSA]
+	RewriteRule ^disciplinas_turmas/(.*)?$ views/alocacoes/disciplinas-em-turmas.php?id_turma=$1 [L,QSA]
+	RewriteRule ^turmas_cursos?$ views/alocacoes/turmas-em-cursos.php [L,QSA]
+	RewriteRule ^turmas_cursos/(.*)?$ views/alocacoes/turmas-em-cursos.php?id_curso=$1 [L,QSA]
+
+	#ALUNOS*************************************************************
+
+	RewriteRule ^atividades_aluno/(.*)?$ views/alunos/atividades_aluno.php?id=$1 [L,QSA]
+	RewriteRule ^atividade_item/(.*)?$ views/alunos/atividades_item.php?id=$1 [L,QSA]
+	RewriteRule ^atividade/(.*)?$ views/alunos/atividade.php?id=$1 [L,QSA]
+	RewriteRule ^lista_aulas/(.*)?$ views/alunos/lista_aulas.php?id=$1 [L,QSA]
+	RewriteRule ^certificados?$ views/certificados/lista-certificados.php [L,QSA]
+
+
+	#PROF LISTA DISCIPLINAS**************************************************************
+
+	RewriteRule ^prof_lista_disciplina/(.*)/(.*)?$ views/professor/listar/prof_lista_disciplina.php?id_turma=$1&id_disciplina=$2 [L,QSA]
+	RewriteRule ^infos_alunos_professor/(.*)/(.*)/(.*)?$ views/professor/infos/infos_alunos_professor.php?id_turma=$1&id_aluno=$2&id_disciplina=$3 [L,QSA]
+
+	#PROF NOVA AULA**************************************************************
+
+	RewriteRule ^nova_aula/(.*)/(.*)?$ views/professor/cadastrar/nova_aula.php?id_turma=$1&id_disciplina=$2 [L,QSA]
+	RewriteRule ^editar_aula/(.*)/(.*)/(.*)?$ views/professor/edit/editar_aula.php?id_turma=$1&id_disciplina=$2&id_aula=$3 [L,QSA]
+	RewriteRule ^exibe_aula/(.*)?$ views/aulas/mostraaula.php?id=$1 [L,QSA]
+
+	RewriteRule ^envia_arquivos_aula/(.*)?$ views/aulas/envia_arquivos_aula.php?id=$1 [L,QSA]
+	
+
+	#PROF NOVO QUESTIONARIO *************************************************************
+
+	RewriteRule ^cadastra_quest/(.*)?$ views/professor/cadastrar/cadastra_quest.php?id_aula=$1 [L,QSA]
+	RewriteRule ^cadastra_quest/(.*)/(.*)?$ views/professor/cadastrar/cadastra_quest.php?action=$1&q=$2 [L,QSA]
+	RewriteRule ^novo_questionario/(.*)?$ views/professor/cadastrar/novo_questionario.php?id_aula=$1 [L,QSA]
+	
+	RewriteRule ^nova_questao/(.*)/(.*)?$ views/professor/cadastrar/cadastra_perguntas_questionario.php?id_questionario=$1&id_aula=$2 [L,QSA]
+
+	RewriteRule ^perguntas_questionario/(.*)/(.*)?$ views/professor/listar/perguntas_questionario.php?id_questionario=$1&id_aula=$2 [L,QSA]
+	
+	RewriteRule ^edita_cadastra_quest/(.*)/(.*)?$ views/professor/cadastrar/novo_questionario.php?id_aula=$1&id_questionario=$2 [L,QSA]
+	
+	RewriteRule ^edita_questao/(.*)/(.*)/(.*)?$ views/professor/cadastrar/cadastra_perguntas_questionario.php?id_questionario=$1&id_pergunta=$2&id_aula=$3 [L,QSA]
+
+	RewriteRule ^visualiza_questionario/(.*)?$ views/professor/cadastrar/visualiza_questionario.php?id_questionario=$1 [L,QSA]
+
+
+
+	#PROF - DELETANDO QUESTIONARIO/PERGUNTAS ********************************************************
+
+	RewriteRule ^deleta_questionario/(.*)?$ controlers/professor/deleta_quest.php?questionario=$1 [L,QSA]
+	RewriteRule ^deleta_pergunta/(.*)/(.*)?$ controlers/professor/deleta_pergunta.php?pergunta=$1&id_aula=$2 [L,QSA]
+
+	#PROF - NOTAS ******************************************************
+
+	RewriteRule ^notas/(.*)?$ views/professor/infos/notas.php?aluno=$1 [L,QSA]
+	RewriteRule ^apaga_arquivo_aula/(.*)/(.*)?$ controlers/professor/delete/apaga_arquivo_aula.php?id=$1&aula=$2 [L,QSA]
+
+	
+
+	#PROF- ATIVIDADE **********************************************
+
+	RewriteRule ^atividades_entregues/(.*)?$ views/professor/listar/atividades_entregues.php [L,QSA]
+	RewriteRule ^ver_arquivos/(.*)/(.*)/(.*)?$ views/professor/infos/ver_arquivos.php?id_turma=$1&id_aluno=$2&id_disciplina=$3 [L,QSA]
+
+
+	RewriteRule ^duvidas?$ views/duvidas/lista_duvidas.php [L,QSA]
+	RewriteRule ^duvida_item/(.*)?$ views/duvidas/duvida_item.php?id=$1 [L,QSA]
+
+	RewriteRule ^suporte?$ views/duvidas/duvidas_suporte.php [L,QSA]
+	RewriteRule ^pergunta_suporte/(.*)?$ views/duvidas/pergunta_suporte.php?id=$1 [L,QSA]
+
+	RewriteRule ^cadastro_avisos?$ views/avisos/cadastro_aviso.php [L,QSA]
+
+
+
+</IfModule>

@@ -1,0 +1,222 @@
+body{background-color: #ededed !important}
+
+.rate:not(:checked) > label {
+    color:#ccc;
+}
+
+.rate > input:checked ~ label {
+    color: #0066cc;    
+}
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #0066cc;  
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #0066cc;
+}
+
+.btn-enviando{ border:1px solid #0066cc !important; color: #0066cc !important}
+
+.mobile-header{ background-color:#0066cc !important}
+.mobile-logo{background-color:#0066cc !important}
+
+
+.texto_aula_grande{color: #525252 !important; }
+
+.data_hora_aula_grande{color: #999;}
+
+.btn-login{background-color: #276b98 !important}
+
+.btn-login:hover{background-color: #344c77 !important}
+
+.label-primary{background-color: #276b98; font-size: 11px; color: #FFF;}
+
+
+::-moz-selection {
+    color: #fff;
+    background: #276b98;
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #276b98;
+  }
+  
+  .friend-list-view:hover {
+    background-color: #344c77;
+  }
+  
+  .header-top-navigation ul li:hover a, .header-top-navigation ul li.active a {
+    color: #FFF;
+  }
+
+  a.link-voltar{color: #276b98;}
+
+h3.nota{color: #0066cc !important;}
+
+.friend-list-view:hover i{ color: #FFF}
+
+.photo-gallery-caption small{color: #999;}
+
+i.download-file{ color:#276b98 }
+
+ul.about-author-menu li  small{color: #999;}
+
+i.download-arquivo-aula{color:#276b98;}
+
+.titulo_coisas{color: #FFF; background-color:#276b98;}
+
+small.desc{color: #999}
+
+.card-border{border-right: 4px solid #276b98;}
+
+.profile-ball{background-color: #FFF;}
+
+.profile-ball i{color: #0066cc;}
+
+.profile-ball-mobile i{color: #FFF;}
+
+.submit-btn {
+    color: #fff;
+    background-color: #0066cc;
+}
+
+.submit-btn:hover {
+    background-color: #ddd;
+    color: #0066cc;
+}
+
+.finaliza-btn {
+    color: #fff;
+    background-color: #0066cc;
+    }
+      
+.finaliza-btn:hover {
+    background-color: #7a297a;
+}
+
+.btn-peq {
+    color: #fff;
+    background-color: #276b98;
+}
+
+.btn-peq:hover {
+    background-color: #344c77;
+  }
+  
+  .about-author-menu li a.active {
+    color: #276b98;
+  }
+
+span.small-info{ color: #e1e1e1;}
+.cor-neutra{color: #999;}
+
+.widget-title-questionario{
+    color: #333333;
+  }
+
+.widget-title-questionario:before {
+    background-color: #276b98;
+}
+
+.widget-title-materia {
+    color: #333333;
+}
+
+.widget-title-materia:before {
+    background-color: #276b98;
+}
+
+.modal-header-transform{
+	background-color: #0066cc !important
+}
+
+.modal-header-transform h5 {color: #FFF}
+
+/* ==============
+  Loader
+===================*/
+
+#preloader {
+    background-color: #f5f5f5;
+}
+
+.spinner:before {
+    border-color: #0066cc rgba(0, 0, 0, 0.3);
+    
+}
+
+.sticky {
+  background-color: #0066cc !important;
+}
+
+.share-text-box .btn-share {
+  background-color: #0066cc !important;
+}
+
+
+/* ---------------------------------------------- */
+
+
+
+
+
+.body-assisti-aula{background-color: #FFF;}
+
+ul.itens-aula li{color:  #666; border-bottom: 1px solid #efefef;}
+
+.cor-neutra-aulas{color: #999;}
+
+.header-aulas{background-color: #0066cc !important; color: #FFF !important}
+
+.header-aulas i{ color: #fff}
+
+h4.widget-title-aulas i{color:#0066cc }
+
+div.nome-aula-click a h4 i{color: #6699ff;}
+
+a.nome-aula-click h4{color:#333 !important;}
+
+.duvidas_botao_aulas {
+    background-color: #0066cc; box-shadow: 2px 2px 6px rgba(0,0,0,0.4); color: #FFF;
+}
+
+#content {
+    background-color: #FFF;
+}
+
+
+/* novo */
+
+.link-primary {
+  color: #0066cc;
+}
+.text-default {
+  color: #0066cc !important;
+}
+.btn-default {
+  background-color: #0066cc !important;
+  color: #FFF;
+}
+.badge-default {
+  background-color: #0066cc !important;
+  color: #FFF;
+}
+.busca:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.aula-atual {
+  border: 1px dashed #0066cc;
+}
+
+.bg-default {
+  background-color: #0066cc !important;
+}

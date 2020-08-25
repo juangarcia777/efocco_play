@@ -1,0 +1,55 @@
+<IfModule mod_rewrite.c>
+    
+  #Bloquear listagem
+  Options -Indexes
+
+  RewriteEngine on
+
+  DefaultLanguage pt-BR
+  AddDefaultCharset UTF-8
+
+  RewriteCond %{SCRIPT_FILENAME} !-d
+  RewriteCond %{SCRIPT_FILENAME} !-f
+
+  #PAGES**************************************************************
+
+  RewriteRule ^acesso?$ index.php [L,QSA]
+  RewriteRule ^recuperacao?$ recuperacao.php [L,QSA]
+  RewriteRule ^new_password/(.*)?$ new_password.php?hash=$1 [L,QSA]
+
+  RewriteRule ^home?$ views/home/home.php [L,QSA]
+  RewriteRule ^seleciona-curso?$ views/home/escolhe_curso.php [L,QSA]
+  
+  RewriteRule ^correcao-questionario?$ views/cursos/correcao-questionario.php [L,QSA]
+  RewriteRule ^videos?$ views/cursos/videos.php [L,QSA]
+  RewriteRule ^arquivos?$ views/cursos/arquivos.php [L,QSA]
+  RewriteRule ^questionarios?$ views/cursos/questionarios.php [L,QSA]
+  RewriteRule ^ajuda?$ views/ajuda/contato.php [L,QSA]
+  RewriteRule ^informacoes?$ views/cursos/informacoes-curso.php [L,QSA]
+  
+
+  RewriteRule ^meus-cursos/(.*)/(.*)?$ controlers/cursos/seleciona_curso.php?curso=$1&altera_curso=1 [L,QSA]
+  RewriteRule ^materia/(.*)/(.*)?$ views/aulas/materia.php?id=$1 [L,QSA]
+  RewriteRule ^aula/(.*)/(.*)?$ views/aulas/aula.php?id=$1 [L,QSA]
+  RewriteRule ^questionario/(.*)/(.*)?$ views/cursos/questionario.php?id=$1 [L,QSA]
+  RewriteRule ^correcao-questionario/(.*)/(.*)?$ views/cursos/correcao-questionario.php?id=$1 [L,QSA]
+  
+  RewriteRule ^profile?$ views/aluno/profile.php [L,QSA]
+  RewriteRule ^minhas-duvidas?$ views/aluno/minhas-duvidas.php [L,QSA]
+
+  RewriteRule ^suporte?$ views/aluno/suporte.php [L,QSA]
+  RewriteRule ^boletim/(.*)?$ views/aluno/boletim.php?disc=$1 [L,QSA]
+  RewriteRule ^anotacoes?$ views/aluno/anotacoes.php [L,QSA]
+
+
+  
+
+  #CONTROLERS**************************************************************
+  RewriteRule ^marca-selecao-curso?$ controlers/cursos/seleciona_curso.php [L,QSA]
+  RewriteRule ^login?$ controlers/login/login.php [L,QSA]
+  RewriteRule ^logout?$ controlers/login/logout.php [L,QSA]
+  RewriteRule ^save-questionario?$ controlers/cursos/salva-questionario.php [L,QSA]
+
+  
+      
+</IfModule>
