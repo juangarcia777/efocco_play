@@ -98,59 +98,68 @@ $DadosCurso = $Pesquisa->DadosCurso();
                             ?>
 
                     		<div class="col-md-4 mtop20">
+
 								<?php if($liberado==true): ?>
 									<a href="materia/<?php echo $line['id_disciplina']; ?>/<?php echo normaliza($line['nome']); ?>">
 								<?php else: ?>
 									<a >
 								<?php endif; ?>
-								<div class="card card-border-bottom">
-		                        	<h4 class="widget-title-materia"><?php echo $line['nome']; ?></h4>
-		                            <div class="post-meta">
-		                                <ul class="comment-share-meta">
-		                                        <li data-toggle="tooltip" title="Aulas Disponíveis">
-		                                            <span class="post-comment">
-		                                                <i class="icofont-read-book-alt"></i>
-		                                                <span><?php echo Numeros($DadosDisciplina['aulas']); ?></span>
-		                                            </span>
-		                                        </li>
-		                                        <li data-toggle="tooltip" title="Arquivos Complementares">
-		                                            <span class="post-share">
-		                                                <i class="icofont-file-alt"></i>
-		                                                <span><?php echo Numeros($DadosDisciplina['arquivos']); ?></span>
-		                                            </span>
-		                                        </li>
-		                                        <li data-toggle="tooltip" title="Avaliações">
-		                                            <span class="post-share">
-		                                                <i class="icofont-list"></i>
-		                                                <span><?php echo Numeros($DadosDisciplina['questionarios']); ?></span>
-		                                            </span>
-		                                        </li>
-		                                    </ul>                                 
-		                            </div>
-									
-									<!-- Barra de Progresso -->
-									<div class="mt-2">
-										<div class="progress">
-											<div class="progress-bar bg-success" role="progressbar"
-											style="width: <?php echo $pct_final; ?>%;"
-											aria-valuenow="25" aria-valuemin="0" 
-											aria-valuemax="100">
+								<div class="card card-border-bottom" style="padding: 0">
 
-												<?php if($pct_final==0): ?>
-													<p class="text-default" style="font-weight:bold" >0%</p>
-												<?php else: ?>
-													<?php echo $pct_final; ?>%
-												<?php endif; ?>
-												
+											<div aria-label="Aulas não assistidas" data-balloon-pos="up" class="bg-danger text-center" style="width: 25%; float:right">
+												<p class="text-light"><i class="icofont-eye-blocked"></i> / <?php echo ($qt_aulas-$qt_aulas_concluidas) ?></p>
+											</div>
+
+										<div class="padding-30" style="padding: 30px">
+											
+
+											<h4 class="widget-title-materia"><?php echo $line['nome']; ?></h4>
+											<div class="post-meta">
+												<ul class="comment-share-meta">
+														<li data-toggle="tooltip" title="Aulas Disponíveis">
+															<span class="post-comment">
+																<i class="icofont-read-book-alt"></i>
+																<span><?php echo Numeros($DadosDisciplina['aulas']); ?></span>
+															</span>
+														</li>
+														<li data-toggle="tooltip" title="Arquivos Complementares">
+															<span class="post-share">
+																<i class="icofont-file-alt"></i>
+																<span><?php echo Numeros($DadosDisciplina['arquivos']); ?></span>
+															</span>
+														</li>
+														<li data-toggle="tooltip" title="Avaliações">
+															<span class="post-share">
+																<i class="icofont-list"></i>
+																<span><?php echo Numeros($DadosDisciplina['questionarios']); ?></span>
+															</span>
+														</li>
+													</ul>                                 
+											</div>
+											
+											<!-- Barra de Progresso -->
+											<div class="mt-2">
+												<div class="progress">
+													<div class="progress-bar bg-success" role="progressbar"
+													style="width: <?php echo $pct_final; ?>%;"
+													aria-valuenow="25" aria-valuemin="0" 
+													aria-valuemax="100">
+
+														<?php if($pct_final==0): ?>
+															<p class="text-default" style="font-weight:bold" >0%</p>
+														<?php else: ?>
+															<?php echo $pct_final; ?>%
+														<?php endif; ?>
+														
+													</div>
+												</div>
+											</div>
+											<!-- ---------------------- -->
+
+											<div class="mt-2">
+												<a class="btn btn-secondary btn-sm text-light" href="boletim/<?php echo $line['id_disciplina']; ?>"><i class="icofont-law-document"></i>&nbsp;&nbsp;Boletim</a>
 											</div>
 										</div>
-									</div>
-									<!-- ---------------------- -->
-
-									<div class="mt-2">
-										<a class="btn btn-secondary btn-sm text-light" href="boletim/<?php echo $line['id_disciplina']; ?>"><i class="icofont-law-document"></i>&nbsp;&nbsp;Boletim</a>
-									</div>
-
 		                        </div>
 		                    	</a>
 		                    </div>    

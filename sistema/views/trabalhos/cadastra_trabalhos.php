@@ -41,59 +41,6 @@
                                                                 <a  href="controlers/trabalhos/delete_trabalho.php?id=<?php echo $trabalhos['id']; ?>&aula=<?php echo $aula ?>&turma=<?php echo $turma ?>&disciplina=<?php echo $disciplina; ?>" class="btn btn-danger btn-icon-anim btn-square" style="float: left;margin-left: 30px"><i class="fa fa-trash" ></i></a>
 																</td>
 															</tr>
-
-
-                                                        <!-- ATENÇÃO ! ESTE MODAL FOI IMPLEMENTADO AQUI POR CONTA DO PRAZO, NA PRÓXIMA MANUTENÇÃO ESTUDAR MANEIRA DE SEPARÁ-LO -->
-
-                                                        <div class="modal fade" id="update_trabalho<?php echo $trabalhos['id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                                                            <div class="modal-dialog modal-lg">
-                                                                <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                    <h5 class="modal-title" id="myLargeModalLabel">Atualizar Trabalho</h5>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body body-modal-info">
-
-                                                                <form action="controlers/trabalhos/update_trabalho.php" method="POST">
-
-                                                                    <input type="hidden" name="id_trabalho" value="<?php echo $trabalhos['id']; ?>">
-                                                                    <input type="hidden" name="aula" value="<?php echo $aula; ?>">
-                                                                    <input type="hidden" name="turma" value="<?php echo $turma; ?>">
-                                                                    <input type="hidden" name="disciplina" value="<?php echo $disciplina; ?>">
-
-                                                                    <div class="container" style="max-width: 100%">
-                                                                        <div class="row">
-                                                                                <div class="col-sm-12 input-novo-trabalho">
-                                                                                    <label for="">Titulo:</label>
-                                                                                    <input type="text" name="titulo" value="<?php echo $trabalhos['titulo'] ?>"  class="form-control" />
-                                                                                </div>
-                                                                                
-                                                                                <div class="col-sm-12 input-novo-trabalho">
-                                                                                    <label for="">Descrição:</label>
-                                                                                    <textarea type="text" name="descricao" class="form-control"><?php echo $trabalhos['descricao'] ?></textarea>
-                                                                                </div>
-
-                                                                                <div class="col-sm-6 input-novo-trabalho">
-                                                                                    <label for="">Data limite para entrega:</label>
-                                                                                    <input type="date" value="<?php echo $trabalhos['limite_data'] ?>"  name="data_limite" class="form-control" />
-                                                                                </div>
-
-                                                                                <div class="col-sm-12 input-novo-trabalho">
-                                                                                    <button class="btn btn-success" type="submit">Cadastrar</button>
-                                                                                </div>
-                                                                        
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                                    
-                                                                </div>      
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                            <!-- ------------------------------------------------------------------- -->
-
-
 													
 													<?php }} else { ?>
 

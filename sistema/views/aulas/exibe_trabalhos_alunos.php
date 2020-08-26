@@ -37,8 +37,8 @@
                                     $search_trabalhos= $db->select("SELECT A.*,B.nota,B.arquivo AS arquivo, B.id AS id_entrega
                                                                     FROM trabalhos AS A
                                                                     LEFT JOIN entrega_trabalhos AS B
-                                                                    ON A.id_aula = B.id_aula
-                                                                    WHERE A.id_aula='$aula' AND
+                                                                    ON A.id = B.id_trabalho
+                                                                    WHERE A.id='$trabalho' AND
                                                                     A.id_turma= '$turma' AND A.id_disciplina='$disciplina'
                                                                     AND B.id_aluno= '$id_aluno'");
                                     
@@ -54,9 +54,9 @@
                                             <input type="hidden" name="id_entrega" value="<?php echo $trabalhos['id_entrega'] ?>">
                                             <input type="hidden" name="turma" value="<?php echo $turma ?>">
                                             <input type="hidden" name="disciplina" value="<?php echo $disciplina ?>">
-                                            <input type="hidden" name="aula" value="<?php echo $aula; ?>">
+                                            <input type="hidden" name="trabalho" value="<?php echo $trabalho; ?>">
                                                 <div class="input-group">
-                                                    <input type="text" name="nota" class="form-control" value="<?php echo $trabalhos['nota'] ?>" placeholder="Sem Nota">
+                                                    <input type="number" name="nota" class="form-control" value="<?php echo $trabalhos['nota'] ?>" placeholder="Sem Nota">
                                                     <span class="input-group-btn">
                                                         <button class="btn btn-primary" type="submit">Salvar</button>
                                                     </span>

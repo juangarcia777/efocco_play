@@ -53,9 +53,10 @@
     	/////ARQUIVOS OU QUESTIONARIOS///////
 		$arquivos = $Pesquisa->ArquivosAula($line['id']);
 		$questionarios = $Pesquisa->QuestionariosAula($line['id']);
+		$trabalhos = $Pesquisa->TrabalhosAula($line['id']);
 		
 
-        	if(!empty($arquivos) || !empty($questionarios) || !empty($line['glossario'])){
+        	if(!empty($arquivos) || !empty($questionarios) || !empty($line['glossario'] || !empty($trabalhos))){
         		?>
         			<div class="coisas-aula collapse " id="expand-aulas<?php echo ($trava<=1)?$line['id']:''; ?>" data-parent="#myGroup" data-expand="<?php echo strtolower($line['titulo']) ?>">
 				
@@ -78,10 +79,33 @@
 						</a>
 	    			</li>  
 
-        		<?php	
-        		}
+        		<?php } ?>
+				
+				<?php
+				if(!empty($trabalhos)){
+					while($jobs= $db->expand($trabalhos)){
+						// print_r($jobs);
+				?>
 
+					
+					<li>    				
+	    				<label class="label-checkbox">
+						  <input type="checkbox" <?php echo (!empty($jobs['existe']))?'checked' : ''; ?>>
+						  <span class="checkmark"></span>
+						</label>
 
+						<a data-name="<?php echo $line['titulo']; ?>" href="javascript:void(0);" aria-expanded="false" aria-controls="expand-aulas<?php echo $line['id']; ?>" class="nome-aula-click assisti-aula"
+						data-id="<?php echo $line['id']; ?>" data-trabalho="<?php echo $jobs['id']; ?>">
+
+							<i class="icofont-book"></i> <?php echo $jobs['titulo']; ?>
+						</a>
+	    			</li>  
+
+					
+
+				<?php } } ?>
+
+			<?php
         		/////ARQUIVOS ANEXOS///////
         		if(!empty($arquivos)){
         			$contador_arquivos=1;

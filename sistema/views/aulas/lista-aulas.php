@@ -203,9 +203,8 @@
 
 																<a  href="exibe_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;"><i class="icon-eye" ></i></a>
 
-																<?php if(!empty($linha_aula['trabalhos'])): ?>
-																<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;margin-right: 5px"><i class="fa fa-book" ></i></a>
-																<?php endif; ?>
+																	<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;margin-right: 5px"><i class="fa fa-book" ></i></a>
+																
 																
 
 																</td>

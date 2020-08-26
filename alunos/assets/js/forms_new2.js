@@ -50,14 +50,11 @@ $(document).ready(function() {
 			var form= $('#ModalUploadArquivo')[0];
 			var data= new FormData(form);
 
-			var id_aula= $('#id_aula_setada').val();
-			var disciplina= $('#disciplina').val();
-			var turma= $('#turma').val();
-			var aluno= $('#aluno_logado').val();
+			var id_trabalho= $('#id_trabalho').val();
 	
 			$.ajax({
 			 type:'POST',
-			 url: 'controlers/aulas/sobe_arquivo.php?id_aula='+id_aula+'&d='+disciplina+'&t='+turma+'&aluno='+aluno,
+			 url: 'controlers/aulas/sobe_arquivo.php?id_trabalho='+id_trabalho,
 			 data: data,
 			 contentType:false,
 			 processData:false,
@@ -202,6 +199,14 @@ $(document).ready(function() {
 		}
 	});
 }
+
+
+$(document).on('click', '.modal-trabalho', function(e) {
+	var id= $(this).attr('data-id');
+	$('#id_trabalho').val(id);
+	$('#ModalUploadAula').modal();
+});
+
 
 
 

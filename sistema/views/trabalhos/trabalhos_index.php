@@ -111,7 +111,6 @@
 	<?php 
 	if(isset($pesquisa)){ 
 
-		//echo '<h4>'.$row_turma['nome'].'</h4>';
 			$q = '';
 			if(isset($disciplina) && !empty($disciplina)){
 				$q = " AND aulas_alocadas.id_disciplina='$disciplina'";	
@@ -157,8 +156,7 @@
 															$verifica_aula = $db->select("SELECT aula.id, aula.data, aula.titulo, aulas_alocadas.id AS id_alocada
 																, aulas_alocadas.data_liberacao, trabalhos.id AS trabalhos FROM aulas_alocadas 
 																LEFT JOIN aula ON aulas_alocadas.id_aula=aula.id
-																LEFT JOIN trabalhos
-																ON aulas_alocadas.id_aula = trabalhos.id_aula 
+																LEFT JOIN trabalhos ON aulas_alocadas.id_aula = trabalhos.id_aula 
 																WHERE aulas_alocadas.id_disciplina='$id_disciplina' AND aulas_alocadas.id_turma='$id_turma'
 																GROUP BY aula.id
 																ORDER BY aula.id DESC

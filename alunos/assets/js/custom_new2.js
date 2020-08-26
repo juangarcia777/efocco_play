@@ -75,6 +75,12 @@ $(function() {
         $("#nomes-aula-topo").html(name);
       }
 
+      //TITULO
+      var trabalho = '';
+      if($(this).data('trabalho')) {
+        trabalho = $(this).attr('data-trabalho');
+      }
+
       //QUESTIONARIO
       if($(this).data('questionario')) {
         id = $(this).attr('data-questionario');
@@ -85,10 +91,19 @@ $(function() {
       } else {
         id = $(this).attr('data-id');       
         location.hash = "aula="+id;
+
+        if(trabalho != '') {
+        location.hash = "aula="+id+'&trabalho='+trabalho;
+        }
         
 				$('.aulas-materia').removeClass('aula-atual');
 				$('#box_'+id).addClass('aula-atual');
         url = 'views/aulas/assisti_aula.php';
+
+        if(trabalho != '') {
+          url = 'views/aulas/assisti_aula.php?trabalho='+trabalho;
+        }
+
       }
 
 
@@ -100,6 +115,10 @@ $(function() {
           $("#body-assisti-aula").html(data);
           $('#status').fadeOut();
           $('#preloader').delay(350).fadeOut('slow');
+
+          if(trabalho!=''){
+           
+					}
       });
         
     });

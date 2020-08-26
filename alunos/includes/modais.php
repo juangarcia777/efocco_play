@@ -51,7 +51,10 @@
             	<form method="post" id="ModalUploadArquivo" enctype="multipart/formdata">
             	<div class="col-md-12  mtop20">
 	            	<h5>Faça upload do seu arquivo!</h5>
-	            	<div class="row">	           
+	            	<div class="row">
+
+						<input type="hidden" name="id_trabalho" id="id_trabalho">
+
 		            	<div class="col-md-12 text-center mtop20">
 			            	<input type="file" name="arquivo" class="form-control">                  
 		            	</div>
@@ -59,7 +62,7 @@
 	                        <button type="submit" class="submit-btn" id="btn-arquivo">ENVIAR</button>
 	                    </div>	
 	                    <div class="col-md-12 text-center mtop20 hide" id="sucesso-msg-arq">
-	                        <span class="aviso-envio-sucesso"><i class="icofont-check"></i> Mensagem enviada com sucesso!</span>
+	                        <span class="aviso-envio-sucesso"><i class="icofont-check"></i> Upload realizado com sucesso ! Aguarde a correção.</span>
 	                    </div>	
 	                </div>                        
 	            </div>
@@ -69,7 +72,6 @@
 		</div>
     </div>
 </div>
-
 
 
 <div class="modal fade" id="ModalAnotacoes" aria-labelledby="textbox">

@@ -79,7 +79,8 @@
 	$(window).on('load', function() {                
     	
 		if ($("#pagina-disciplina").length > 0) {
-      		var dados = $(location).attr('hash');      		
+			  var dados = $(location).attr('hash'); 
+			  var trabalho=0;     		
       		if(dados!=''){
       			
       			var url = 'views/aulas/assisti_aula.php';
@@ -97,17 +98,36 @@
 					$('#box_'+aula).addClass('aula-atual');
 
 				} else {
-					var aula = ex[1];
-					location.hash = "aula="+aula;
-					$('#box_'+ex[1]).addClass('aula-atual');
+					
+					var n = ex[1].search("&trabalho=");
+
+					if(n>0){
+						
+						var ex3 = ex[1].split('&trabalho=');
+						var aula = ex3[0];
+						location.hash = "aula="+aula+'&trabalho='+ex3[1];
+						var trabalho = ex3[1];
+						
+					} else {
+						var aula = ex[1];
+						location.hash = "aula="+aula;
+						$('#box_'+ex[1]).addClass('aula-atual');
+					}
+
+					
 				}
 
 				$("#expand-aulas"+aula).addClass('show');
 
-				$.post(url,{id:aula}, function(data){
+				$.post(url,{id:aula, trabalho:trabalho}, function(data){
 			    	$("#body-assisti-aula").html(data);
 			        $('#status').fadeOut();
-			        $('#preloader').delay(50).fadeOut('slow');
+					$('#preloader').delay(50).fadeOut('slow');
+					
+					if(trabalho!=''){
+						
+					}	
+
 			    });
 
       		} else {

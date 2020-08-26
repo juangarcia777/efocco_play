@@ -26,7 +26,7 @@ if ($dominio == 'efocco') {
 	
 	///BANCO DE DADOS///	
 	define("HOST", "localhost");
-	define("DBNAME", "efoccopl_banco2");
+	define("DBNAME", "efoccopl_banco");
 	define("USER", "root");
 	define("PASSWORD", "");
 

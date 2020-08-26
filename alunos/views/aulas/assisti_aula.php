@@ -6,6 +6,7 @@ $video = video_aula($InformacoesAula['video_aula'],$InformacoesAula['tipo_video'
 $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_disciplina']);
 ?>
 
+
 <div class="row row-big">
 	
 	<input type="hidden" id="id_aula_setada" value="<?php echo $id; ?>">
@@ -35,18 +36,46 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 	<!-- AREA DE PESQUISA DE TRABALHO -->
 
 	<?php
-	$search_trabalhos= $db->select("SELECT * FROM trabalhos WHERE id_aula='$id'");
-	if($db->rows($search_trabalhos)){
+
+	$search_trabalhos= $db->select("SELECT A.*, B.id AS existe , B.data AS data_entregado
+									FROM trabalhos AS A
+									LEFT JOIN entrega_trabalhos AS B
+									ON A.id = B.id_trabalho
+									WHERE A.id_aula='$id'");
+
+	if($db->rows($search_trabalhos)){ ?>
+
+	<div class="col-md-12">
+	<div class="alert alert-danger"><strong>Atenção !</strong> Esta aula possui um trabalho, confira abaixo:</div>
+	</div>
+
+	<?php
 		while($trabalhos= $db->expand($search_trabalhos)){
 	?>
+
 		
 		<div class="col-md-12 mtop0">
-			<div class="alert alert-danger"><strong>Atenção !</strong> Esta aula possui um trabalho, confira abaixo:</div>
 			<div class="trabalhos-aula">
 				<h2><?php echo $trabalhos['titulo']; ?></h2>
 				<h6><?php echo $trabalhos['descricao']; ?></h6>
 			<br>
-			<div class="alert alert-info"><strong>Suba seu arquivo !</strong> Clique no botão + no canto inferior direito da tela e depois no botão de Upload(Vermelho).</div>
+
+			<?php if(empty($trabalhos['existe'])){ ?>
+
+			<div class="alert alert-light">
+				<strong>Clique aqui para subir seu arquivo !</strong>&nbsp; <button type="button" data-id="<?php echo $trabalhos['id']; ?>" class="btn btn-sub btn-danger has-tooltip modal-trabalho" data-placement="left" title="Save">
+				<i class="icofont-upload-alt"></i> </button>
+			</div>
+
+			<?php } else { ?>
+
+			<div class="alert alert-warning"  id="trabalho<?php echo $trabalho; ?>">
+				<strong>Você entregou este trabalho no dia <?php echo data_mysql_para_user($trabalhos['data_entregado']); ?> !</strong>
+			</div>
+
+			<?php } ?>
+
+			
 
 			</div>
 		</div>
@@ -135,8 +164,8 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 			<button type="button"  data-toggle="modal" data-target="#ModalDuvidasAula" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen">
 			<i class="icofont-question"></i> </button>
 
-			<button type="button"  data-toggle="modal" data-target="#ModalUploadAula" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save">
-				<i class="icofont-upload-alt"></i> </button>
+			<!-- <button type="button"  data-toggle="modal" data-target="#ModalUploadAula" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save">
+				<i class="icofont-upload-alt"></i> </button> -->
 
 			<button type="button"  data-toggle="modal" data-target="#ModalAnotacoes" onclick="buscaNotas()" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download">
 				 <i class="icofont-pencil"></i> </button>
