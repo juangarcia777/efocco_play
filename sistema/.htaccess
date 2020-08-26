@@ -61,6 +61,8 @@
 	
 	RewriteRule ^ordena_aula/(.*)?$ views/aulas/ordena_aulas.php?id=$1 [L,QSA]
 
+	RewriteRule ^cadastra_trabalhos/(.*)/(.*)/(.*)?$ views/trabalhos/cadastra_trabalhos.php?aula=$1&turma=$2&disciplina=$3 [L,QSA]
+
 
 	
 
@@ -117,10 +119,14 @@
 	RewriteRule ^editar_aula/(.*)/(.*)/(.*)?$ views/professor/edit/editar_aula.php?id_turma=$1&id_disciplina=$2&id_aula=$3 [L,QSA]
 	RewriteRule ^exibe_aula/(.*)?$ views/aulas/mostraaula.php?id=$1 [L,QSA]
 
+
 	RewriteRule ^envia_arquivos_aula/(.*)?$ views/aulas/envia_arquivos_aula.php?id=$1 [L,QSA]
 
 	RewriteRule ^trabalhos_alunos/(.*)/(.*)/(.*)?$ views/aulas/trabalhos_alunos.php?aula=$1&turma=$2&disciplina=$3 [L,QSA]
 	RewriteRule ^exibe_trabalhos_alunos/(.*)/(.*)/(.*)?$ views/aulas/exibe_trabalhos_alunos.php?aula=$1&turma=$2&disciplina=$3 [L,QSA]
+
+	RewriteRule ^trabalhos?$ views/trabalhos/trabalhos_index.php [L,QSA]
+
 	
 
 	#PROF NOVO QUESTIONARIO *************************************************************

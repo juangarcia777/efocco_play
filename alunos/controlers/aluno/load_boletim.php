@@ -219,8 +219,8 @@ $search_jobs = $db->select("SELECT * FROM trabalhos
 
             $trabalho_qt++;
 
-            $id_trabalho= $jobs_found['id'];
-            $verified= $db->select("SELECT * FROM entrega_trabalhos WHERE id_trabalho='$id_trabalho'");
+            $id_aula= $jobs_found['id_aula'];
+            $verified= $db->select("SELECT * FROM entrega_trabalhos WHERE id_aula='$id_aula'");
             
             // ALUNO FEZ O TRABALHO
             if($db->rows($verified)) {

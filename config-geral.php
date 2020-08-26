@@ -17,8 +17,8 @@ if ($dominio == 'efocco') {
 	define("LOGO_LOGIN", "logo.efocco.png");
 	define("LOGO", "efocco-branca.png");
 	
-	$CAMINHO_ALUNO = 'sisplay/efocco_play/alunos';	 // Quando subir para web manter so /alunos			
-	$CAMINHO_SISTEMA = 'sisplay/efocco_play/sistema';	 // Quando subir para web manter so /sistema
+	$CAMINHO_ALUNO = 'efocco_play/alunos';	 // Quando subir para web manter so /alunos			
+	$CAMINHO_SISTEMA = 'efocco_play/sistema';	 // Quando subir para web manter so /sistema
 	
 	// PACK DE EMAIL
 	define("PLATAFORMA","EFOCCOPLAY");
@@ -26,7 +26,7 @@ if ($dominio == 'efocco') {
 	
 	///BANCO DE DADOS///	
 	define("HOST", "localhost");
-	define("DBNAME", "efoccopl_banco");
+	define("DBNAME", "efoccopl_banco2");
 	define("USER", "root");
 	define("PASSWORD", "");
 

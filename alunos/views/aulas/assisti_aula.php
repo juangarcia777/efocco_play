@@ -29,7 +29,29 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 			<h6>Tempo total do vídeo: 
 			<b><span class="text" id="tempo">---</span></b></h6>
 		</div>
-		<?php } ?>	
+		<?php } ?>
+
+
+	<!-- AREA DE PESQUISA DE TRABALHO -->
+
+	<?php
+	$search_trabalhos= $db->select("SELECT * FROM trabalhos WHERE id_aula='$id'");
+	if($db->rows($search_trabalhos)){
+		while($trabalhos= $db->expand($search_trabalhos)){
+	?>
+		
+		<div class="col-md-12 mtop0">
+			<div class="alert alert-danger"><strong>Atenção !</strong> Esta aula possui um trabalho, confira abaixo:</div>
+			<div class="trabalhos-aula">
+				<h2><?php echo $trabalhos['titulo']; ?></h2>
+				<h6><?php echo $trabalhos['descricao']; ?></h6>
+			<br>
+			<div class="alert alert-info"><strong>Suba seu arquivo !</strong> Clique no botão + no canto inferior direito da tela e depois no botão de Upload(Vermelho).</div>
+
+			</div>
+		</div>
+
+	<?php } } ?>
 
 	<div class="col-md-12 ajuste-conteudo-aula">
 		<h3 class="titulo_aula_grande"><?php echo $InformacoesAula['titulo']; ?></h3>				
@@ -73,6 +95,11 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 		</div>
 		</div>	
 	<?php } ?>
+
+	
+
+
+
 
 	<?php if(!empty($InformacoesAula['objetivo_aula'])){ ?>	
 		<div class="col-md-12 mtop20 ajuste-conteudo-aula">

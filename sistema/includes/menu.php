@@ -43,6 +43,10 @@
 							<li>
 								<a <?php echo 'href="listar_disciplinas"'; ?> >Disciplinas</a>
 							</li>
+
+							<li>
+								<a <?php echo 'href="trabalhos"'; ?> >Trabalhos</a>
+							</li>
 							
 							
 						</ul>
