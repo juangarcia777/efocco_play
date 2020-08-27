@@ -104,13 +104,15 @@ $DadosCurso = $Pesquisa->DadosCurso();
 								<?php else: ?>
 									<a >
 								<?php endif; ?>
-								<div class="card card-border-bottom" style="padding: 0">
+								<div class="card card-border-bottom card-aula">
 
-											<div aria-label="Aulas não assistidas" data-balloon-pos="up" class="bg-danger text-center" style="width: 25%; float:right">
-												<p class="text-light"><i class="icofont-eye-blocked"></i> / <?php echo ($qt_aulas-$qt_aulas_concluidas) ?></p>
+											<div aria-label="Aulas não assistidas" data-balloon-pos="up" class="bg-danger text-center views-aula">
+												<?php if($pct_final != 100): ?>
+													<p class="text-light"><i class="icofont-eye-blocked"></i> <?php echo ($qt_aulas-$qt_aulas_concluidas) ?></p>
+												<?php endif; ?>
+												
 											</div>
 
-										<div class="padding-30" style="padding: 30px">
 											
 
 											<h4 class="widget-title-materia"><?php echo $line['nome']; ?></h4>
@@ -157,9 +159,9 @@ $DadosCurso = $Pesquisa->DadosCurso();
 											<!-- ---------------------- -->
 
 											<div class="mt-2">
-												<a class="btn btn-secondary btn-sm text-light" href="boletim/<?php echo $line['id_disciplina']; ?>"><i class="icofont-law-document"></i>&nbsp;&nbsp;Boletim</a>
+												<a class="btn btn-secondary btn-sm text-light" href="boletim/<?php echo $line['id_disciplina']; ?>"><i class="icofont-law-document"></i>&nbsp;&nbsp;Acompanhamento</a>
 											</div>
-										</div>
+										
 		                        </div>
 		                    	</a>
 		                    </div>    

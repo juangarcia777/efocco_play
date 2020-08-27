@@ -14,16 +14,20 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 	<input type="hidden" id="disciplina" value="<?php echo $InformacoesAula['id_disciplina']; ?>">
 	<input type="hidden" id="turma" value="<?php echo $_SESSION['CursoSelecionadoAVA']; ?>">
 	<input type="hidden" id="aluno_logado" value="<?php echo $_SESSION['UserLogadoAVA']; ?>">
+
+	<?php if(!isset($_GET['trabalho'])): ?>
 	
 	<?php if(!empty($video)){ ?>
 		<div class="col-md-12  ">
 			<?php echo $video; ?>
 		</div>
+	<?php } ?>
 
-		
+	<?php endif; ?>
 
-	<?php } ?>	
 </div>
+
+	<?php if(!isset($_GET['trabalho'])): ?>
 
 		<?php if(!empty($video)){ ?>
 		<div class="col-md-12 mbottom30 ajuste-conteudo-aula" style="margin-top:30px">
@@ -31,6 +35,8 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 			<b><span class="text" id="tempo">---</span></b></h6>
 		</div>
 		<?php } ?>
+
+	<?php endif; ?>
 
 
 	<!-- AREA DE PESQUISA DE TRABALHO -->
@@ -45,8 +51,13 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 
 	if($db->rows($search_trabalhos)){ ?>
 
-	<div class="col-md-12">
+
+	<div class="col-md-12" id="rolagem_trabalho">
+
+	<?php if(!isset($_GET['trabalho'])): ?>
 	<div class="alert alert-danger"><strong>Atenção !</strong> Esta aula possui um trabalho, confira abaixo:</div>
+	<?php endif; ?>
+
 	</div>
 
 	<?php
@@ -81,6 +92,8 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 		</div>
 
 	<?php } } ?>
+
+	<?php if(!isset($_GET['trabalho'])): ?>
 
 	<div class="col-md-12 ajuste-conteudo-aula">
 		<h3 class="titulo_aula_grande"><?php echo $InformacoesAula['titulo']; ?></h3>				
@@ -154,6 +167,8 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 			<div class="texto_aula_grande"><?php echo apresentacao_aula($InformacoesAula['ref_bibliograficas']); ?></div>
 		</div>	
 	<?php } ?>
+
+	<?php endif; ?>
 
 
 	<div class="btn-group-fab" role="group" aria-label="FAB Menu">

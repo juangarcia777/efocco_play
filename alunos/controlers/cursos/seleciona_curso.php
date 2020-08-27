@@ -8,6 +8,7 @@ unset($_SESSION['travadas']);
 
 $db= new DB;
 
+
 $sql= $db->select("SELECT * FROM avisos 
 WHERE FIND_IN_SET($curso, turmas) OR 
 turmas = 0 ORDER BY id DESC LIMIT 1");

@@ -120,6 +120,10 @@
 	<!-- Data table JavaScript -->
 	<script src="<?php echo SISTEMA_AVA; ?>assets/js/dataTables-data.js"></script>
 	<script src="<?php echo SISTEMA_AVA; ?>js/custom-data-table.js"></script>
-	<script src="<?php echo SISTEMA_AVA; ?>js/custom2_new.js"></script>	
+	<script src="<?php echo SISTEMA_AVA; ?>js/custom2_new.js"></script>
+
+	<script src="<?php echo SISTEMA_AVA; ?>assets/js/popper-tip.js"></script>
+	<script src="<?php echo SISTEMA_AVA; ?>assets/js/tippy.js"></script>
+	<script src="<?php echo SISTEMA_AVA; ?>assets/js/tooltips.js"></script>	
 
 	

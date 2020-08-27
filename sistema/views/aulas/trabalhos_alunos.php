@@ -5,8 +5,6 @@
 <div class="container-fluid mtop20" >
 <div class="row">
 
-
-	
 								<div class="panel">
 			            			<div class="table-wrap">
 										<div class="table-responsive">
@@ -56,9 +54,9 @@
 						</div>
 					</div>
 
-				<a href="cria-nova-aula">
+				<!-- <a href="cria-nova-aula">
 				    <div class="new_aula_button"><i class="fa  fa-plus"></i></div>
-				</a>
+				</a> -->
 
 
 <?php include("../../includes/rodape.php"); ?>

@@ -193,17 +193,19 @@
 
 																<a data-id="<?php echo $linha_aula['id']; ?>" data-post="controlers/professor/deleta_aula.php" data-title="Confirma a exclusão do registro?" data-text="A ação não podera ser desfeita!" data-return="lista-aulas" data-opcao="9" onclick="javascript:void(0)" class="btn btn-danger btn-icon-anim btn-square apaga-elemento" style="float:right; margin-left: 5px;"><i class="icon-trash"></i></a>
 
-																<a href="cadastra_quest/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square" style="float:right; margin-left: 5px;"><i class="fa fa-list"></i></a>	
+																<a href="cadastra_quest/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square cadastra-questionario" style="float:right; margin-left: 5px;"><i class="fa fa-list"></i></a>	
 
-																<a href="envia_arquivos_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-warning btn-icon-anim btn-square" style="float:right; margin-left: 5px;"><i class="fa fa-file"></i></a>
+																<a href="envia_arquivos_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-warning btn-icon-anim btn-square envia-arquivos" style="float:right; margin-left: 5px;"><i class="fa fa-file"></i></a>
 
-																<a href="edita-aula/<?php echo $linha_aula['id'] ?>" class="btn btn-default btn-icon-anim btn-square" style="float:right; margin-left: 5px;"><i class="fa fa-pencil"></i></a>
+																<a href="edita-aula/<?php echo $linha_aula['id'] ?>" class="btn btn-default btn-icon-anim btn-square edita-aula" style="float:right; margin-left: 5px;"><i class="fa fa-pencil"></i></a>
 
-																<a href="aloca_aula_turmas/<?php echo $linha_aula['id'] ?>" class="btn btn-info btn-icon-anim btn-square" style="float: right; margin-left: 5px; "><i class="fa fa-exchange"></i></a>
+																<a href="aloca_aula_turmas/<?php echo $linha_aula['id'] ?>" class="btn btn-info btn-icon-anim btn-square aloca" style="float: right; margin-left: 5px; "><i class="fa fa-exchange"></i></a>
 
-																<a  href="exibe_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;"><i class="icon-eye" ></i></a>
+																<a  href="exibe_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square exibi" style="float: right;"><i class="icon-eye" ></i></a>
 
-																<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;margin-right: 5px;<?php echo ($linha_aula['trabalhos']>0)?'padding-right: 55px':'' ?>">
+																<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square trabalhos" style="float: right;margin-right: 5px;<?php echo ($linha_aula['trabalhos']>0)?'padding-right: 50px':'' ?>">
+
+
 																<i class="fa fa-book"></i>
 
 																<?php if($linha_aula['trabalhos'] > 0): ?>
@@ -256,11 +258,10 @@
 </div>	
 </div>
 
-<a href="cria-nova-aula">
+<a href="cria-nova-aula" class="add-aula">
     <div class="new_aula_button"><i class="fa  fa-plus"></i></div>
 </a>
 
 
 
 <?php include("../../includes/rodape.php"); ?>
-

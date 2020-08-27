@@ -44,9 +44,6 @@
 								<a <?php echo 'href="listar_disciplinas"'; ?> >Disciplinas</a>
 							</li>
 
-							<li>
-								<a <?php echo 'href="trabalhos"'; ?> >Trabalhos</a>
-							</li>
 							
 							
 						</ul>
@@ -137,9 +134,9 @@
 						<a href="lista-aulas"><button class="btn btn-success btn-block">AULAS</button></a>	
 					</li>
 
-					<li class="">
+					<!-- <li class="">
 						<a href="certificados"><button class="btn btn-primary btn-block">CERTIFICADOS</button></a>	
-					</li>	
+					</li>	 -->
 					
 					
 

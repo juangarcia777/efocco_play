@@ -1,5 +1,4 @@
 <?php
-
 	
     require('../../config.php');
     
@@ -105,11 +104,11 @@
             <div class="col-sm-12">
                 
                 <div class="row">
-                    <div class="col-md-3"><img src="assets/imgs/logos/efocco_logo.png" id="logo" alt="Logo"></div>
+                    <div class="col-md-3"><img src="assets/imgs/logos/<?php echo LOGO_PDF; ?>" id="logo" alt="Logo"></div>
                     <div class="col-sm-9 text-center">
-                    <h3 id="titulo">EFOCCO ESCOLA TÉCNICA</h3>
+                    <h3 id="titulo"><?php echo $_SESSION['infos_gerais']['nome_escola'] ?></h3>
                    
-                        <p class="text-center">Mantido pela EFOCCO Instituição de Ensino EIRELI - ME <br> CNPJ- 19.908.206/0001-42 </p>
+                        <p class="text-center"><?php echo $_SESSION['infos_gerais']['info_pdf'] ?></p>
                     
                     </div>
                 </div>

@@ -82,18 +82,18 @@ $DadosCurso = $Pesquisa->DadosCurso();
                 </div>
             </div>
 
-             <!-- AREA DE GRÁFICO de CÁLCULO -->
 
+            <?php if($_SESSION['infos_gerais']['ponto_media'] != 0): ?>
             <div class="col-sm-12 ">
                 <div class="alert alert-danger mt-3" role="alert">
                     <strong>Atenção !</strong> Ao assistir todas as aulas você ganha 0.5 pontos, na média.
                 </div>
             </div>
+            <?php endif; ?>
 
         </div>
 
          
-
         <div class="row load" >
                 <?php for($i=1;$i<=8;$i++): ?>
                 <div class="col-sm-12 col-md-3 mt-3 mb-3">

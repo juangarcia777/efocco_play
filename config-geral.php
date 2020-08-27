@@ -15,10 +15,18 @@ if ($dominio == 'efocco') {
 
 	define("BACKGROUND", "background.efocco.jpg");
 	define("LOGO_LOGIN", "logo.efocco.png");
+	define("LOGO_PDF", "efocco_logo.png");
 	define("LOGO", "efocco-branca.png");
 	
 	$CAMINHO_ALUNO = 'efocco_play/alunos';	 // Quando subir para web manter so /alunos			
 	$CAMINHO_SISTEMA = 'efocco_play/sistema';	 // Quando subir para web manter so /sistema
+
+	$_SESSION['infos_gerais'] = Array(
+		'ponto_media'=> 0.5,
+		'nome_escola'=> 'EFOCCO ESCOLA TÉCNICA',
+		'info_pdf' => 'Mantido pela EFOCCO Instituição de Ensino EIRELI - ME CNPJ- 19.908.206/0001-42',
+		'link_area_aluno' => 'https://efocco.wpensar.com.br/login'
+	);
 	
 	// PACK DE EMAIL
 	define("PLATAFORMA","EFOCCOPLAY");

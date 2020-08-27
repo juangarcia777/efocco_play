@@ -45,7 +45,9 @@
                                         </div>
                                     </li>
                                     
-                                    <li><a href="https://efocco.wpensar.com.br/login" target="_blank">Área do Aluno</a></li>
+                                    <?php if(!empty($_SESSION['infos_gerais'])): ?>
+                                        <li><a href="<?php echo $_SESSION['infos_gerais']['link_area_aluno']; ?>" target="_blank">Área do Aluno</a></li>
+                                    <?php endif; ?>
 
                                     <li class="notification-trigger  sobe-menu"><a class="msg-trigger-btn" href="#avisos-exibe">Avisos <span class="label label-primary avisos-topo hide"></a>
                                         <div class="message-dropdown" id="avisos-exibe">
@@ -53,9 +55,37 @@
                                                 <p class="recent-msg">Avisos</p>
                                                
                                             </div>
+
                                             <ul class="dropdown-msg-list" id="list-avisos-topo">
-                                                <li class="aguarde-avisos text-center"><img src="assets/images/loader.gif"></li>
+
+                                            <?php
+                                            $curso= $_SESSION['CursoSelecionadoAVA'];
+                                            
+                                            $sql= $db->select("SELECT * FROM avisos 
+                                            WHERE FIND_IN_SET($curso, turmas) OR 
+                                            turmas = 0 ORDER BY id DESC ");
+
+                                                if($db->rows($sql)){
+                                                while($aviso=$db->expand($sql)){ ?>
+
+                                                <li class=" d-flex justify-content-around align-items-center text-center" class="modal-confere-aviso" data-imagem="<?php echo $aviso['imagem'] ?>" data-texto="<?php echo $aviso['aviso'] ?>">
+                                                
+                                                
+                                                <img src="../images/avisos/<?php echo $aviso['imagem']; ?>" width="30%" alt="">
+                                                
+                                                    <p><?php echo $aviso['aviso']; ?></p>
+                                
+                                                </li>
+
+                                                <hr>
+
+                                                <?php }} else { ?>
+                                                <li class="aguarde-avisos text-center">
+                                                    <strong>Não possuem avisos esta turma.</strong>
+                                                </li>
+                                            <?php } ?>
                                             </ul>
+
                                             <div class="msg-dropdown-footer hide">
                                                 <span>ver todos os avisos</span>
                                             </div>
@@ -123,11 +153,8 @@
                                             </ul>
                                             <ul>
                                                 <li><a href="minhas-duvidas"><i class="icofont-question-circle"></i> Minhas Dúvidas</a></li>
-                                                                                               
                                             </ul>
-                                            <ul>
-                                                <li><a href="boletim"><i class="icofont-file-document"></i> Boletim</a></li>
-                                            </ul>
+                                           
                                             <ul>
                                                 <li><a href="anotacoes"><i class="icofont-notebook"></i> Anotações</a></li>
                                             </ul>
@@ -242,6 +269,11 @@
                                             </ul>
                                             <ul >
                                                 <li><a href="minhas-duvidas"><i class="icofont-question-circle"></i> Minhas Dúvidas</a></li>
+                                                                                               
+                                            </ul>
+
+                                            <ul >
+                                                <li><a href="suporte"><i class="icofont-question-circle"></i> Suporte</a></li>
                                                                                                
                                             </ul>
 

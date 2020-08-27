@@ -11,7 +11,7 @@ if($soma_trabalhos == 0) {
 
 // AREA DE VERIFICAÇÃO SE ALUNO ASSISTIU TODAS AS AULAS
 if($qt_aulas == $aluno_assistiu && $qt_aulas != 0){
-    $bonus= 0.5;
+    $bonus= $_SESSION['infos_gerais']['ponto_media'];
 } else {
     $bonus= 0;
 }

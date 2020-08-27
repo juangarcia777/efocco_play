@@ -125,7 +125,7 @@
 					$('#preloader').delay(50).fadeOut('slow');
 					
 					if(trabalho!=''){
-						
+						// $(window).scrollTop($('#rolagem_trabalho').offset().top);
 					}	
 
 			    });
