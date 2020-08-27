@@ -12,5 +12,5 @@ limite_data='$data_limite' WHERE id='$id_trabalho'");
 $_SESSION['aviso-mensagem-ava'] = 'Trabalho atualizado com sucesso! ';
 $_SESSION['aviso-tipo-ava'] = 'success';
 
-header("Location: ../../cadastra_trabalhos/".$aula."/".$turma."/".$disciplina."");
+header("Location: ../../trabalhos_alunos/".$aula."/".$turma."/".$disciplina."");
 exit;

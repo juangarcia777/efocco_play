@@ -155,7 +155,7 @@
 													<?php
 
 															$verifica_aula = $db->select("SELECT aula.id, aula.data, aula.titulo, aulas_alocadas.id AS id_alocada
-																, aulas_alocadas.data_liberacao, trabalhos.id AS trabalhos FROM aulas_alocadas 
+																, aulas_alocadas.data_liberacao, COUNT(trabalhos.id) AS trabalhos FROM aulas_alocadas 
 																LEFT JOIN aula ON aulas_alocadas.id_aula=aula.id
 																LEFT JOIN trabalhos
 																ON aulas_alocadas.id_aula = trabalhos.id_aula 
@@ -203,8 +203,14 @@
 
 																<a  href="exibe_aula/<?php echo $linha_aula['id'] ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;"><i class="icon-eye" ></i></a>
 
-																	<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;margin-right: 5px"><i class="fa fa-book" ></i></a>
-																
+																<a  href="trabalhos_alunos/<?php echo $linha_aula['id'] ?>/<?php echo $turma; ?>/<?php echo $disciplina; ?>" class="btn btn-primary btn-icon-anim btn-square" style="float: right;margin-right: 5px;<?php echo ($linha_aula['trabalhos']>0)?'padding-right: 55px':'' ?>">
+																<i class="fa fa-book"></i>
+
+																<?php if($linha_aula['trabalhos'] > 0): ?>
+																<span class="badge badge-danger"><?php echo $linha_aula['trabalhos'] ?></span>
+																<?php endif; ?>
+
+																</a>
 																
 
 																</td>
