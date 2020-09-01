@@ -54,6 +54,7 @@
 		$arquivos = $Pesquisa->ArquivosAula($line['id']);
 		$questionarios = $Pesquisa->QuestionariosAula($line['id']);
 		$trabalhos = $Pesquisa->TrabalhosAula($line['id']);
+		// print_r($line);
 		
 
         	if(!empty($arquivos) || !empty($questionarios) || !empty($line['glossario'] || !empty($trabalhos))){

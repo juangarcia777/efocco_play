@@ -36,6 +36,8 @@
 	RewriteRule ^listar_adm?$ views/listar/adm.php [L,QSA]
 	RewriteRule ^search_alunos?$ views/listar/search_alunos.php [L,QSA]
 
+	RewriteRule ^aulas_desalocadas?$ views/aulas/aulas_desalocadas.php [L,QSA]
+
 
 
 

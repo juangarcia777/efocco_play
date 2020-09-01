@@ -5,7 +5,7 @@ class PESQUISAS_SISTEMA{
 
 	public function DadosProfessor(){
 		
-		$db = new DB();  		
+		$db = new DB();
 		
 		$id = $_SESSION['SistemaLogadoAVA']; 
 		$sel = $db->select("SELECT * FROM professores WHERE id='$id' ORDER BY id DESC");

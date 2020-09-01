@@ -1,11 +1,11 @@
 <?php
 
-
 @session_start();
 @session_cache_expire(1800000); 
 date_default_timezone_set('America/Sao_Paulo');
 
-$dominio= 'efocco'; //$_SERVER['HTTP_HOST'];
+// $dominio= $_SERVER['HTTP_HOST'];
+$dominio= 'efocco';
 
 if ($dominio == 'efocco') {
 
@@ -20,23 +20,23 @@ if ($dominio == 'efocco') {
 	
 	$CAMINHO_ALUNO = 'efocco_play/alunos';	 // Quando subir para web manter so /alunos			
 	$CAMINHO_SISTEMA = 'efocco_play/sistema';	 // Quando subir para web manter so /sistema
-
-	$_SESSION['infos_gerais'] = Array(
-		'ponto_media'=> 0.5,
-		'nome_escola'=> 'EFOCCO ESCOLA TÉCNICA',
-		'info_pdf' => 'Mantido pela EFOCCO Instituição de Ensino EIRELI - ME CNPJ- 19.908.206/0001-42',
-		'link_area_aluno' => 'https://efocco.wpensar.com.br/login'
-	);
 	
 	// PACK DE EMAIL
 	define("PLATAFORMA","EFOCCOPLAY");
 	//---------------//
 	
-	///BANCO DE DADOS///	
+	///BANCO DE DADOS///
 	define("HOST", "localhost");
 	define("DBNAME", "efoccopl_banco");
 	define("USER", "root");
 	define("PASSWORD", "");
+
+	///BANCO DE DADOS///	
+	// define("HOST", "localhost");
+	// define("DBNAME", "efoccopl_banco");
+	// define("USER", "efoccopl_user");
+	// define("PASSWORD", "kaca123!@#");
+
 
 	}
 	
@@ -51,8 +51,8 @@ if ($dominio == 'efocco') {
 		define("LOGO", "logo.efac.svg");
 	
 		
-		$CAMINHO_ALUNO = 'sisplay/efocco_play/alunos';	 // Quando subir para web manter so /alunos
-		$CAMINHO_SISTEMA = 'sisplay/efocco_play/sistema';	 // Quando subir para web manter so /sistema
+	$CAMINHO_ALUNO = 'efocco_play/alunos';	 // Quando subir para web manter so /alunos			
+	$CAMINHO_SISTEMA = 'efocco_play/sistema';	 // Quando subir para web manter so /sistema
 		
 		
 		// PACK DE EMAIL
@@ -122,7 +122,5 @@ define("TIPO_VIDEO_AVA", 'YOUTUBE');
 
 
 define("AVA_AMBINETE_CONFIGURADO", '1');
-
-
 
 ?>

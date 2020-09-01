@@ -43,11 +43,13 @@ $InformacoesDisciplina= $Pesquisa->InformacoesDisciplina($InformacoesAula['id_di
 
 	<?php
 
+	$hoje= date('Y-m-d');
+
 	$search_trabalhos= $db->select("SELECT A.*, B.id AS existe , B.data AS data_entregado
 									FROM trabalhos AS A
 									LEFT JOIN entrega_trabalhos AS B
 									ON A.id = B.id_trabalho
-									WHERE A.id_aula='$id'");
+									WHERE A.id_aula='$id' AND '$hoje' <= A.limite_data ");
 
 	if($db->rows($search_trabalhos)){ ?>
 

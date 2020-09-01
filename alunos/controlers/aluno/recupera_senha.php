@@ -44,6 +44,7 @@ function envia_email($email,$mensagem,$cliente){
 	$mail = new PHPMailer;
 	$mail->SMTPDebug =0;
 	$mail->isSMTP();
+	$mail->SMTPDebug  = 1; 
 	$mail->Host = 'srv74.prodns.com.br';
 	$mail->SMTPAuth = true;
 	$mail->Username = 'saida@sisconnection.com.br';

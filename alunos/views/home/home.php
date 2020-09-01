@@ -158,6 +158,8 @@ $DadosCurso = $Pesquisa->DadosCurso();
 											</div>
 											<!-- ---------------------- -->
 
+											<?php //print_r($_SESSION['infos_gerais']); ?>
+
 											<div class="mt-2">
 												<a class="btn btn-secondary btn-sm text-light" href="boletim/<?php echo $line['id_disciplina']; ?>"><i class="icofont-law-document"></i>&nbsp;&nbsp;Acompanhamento</a>
 											</div>
@@ -176,16 +178,9 @@ $DadosCurso = $Pesquisa->DadosCurso();
                     	</div>			
                     </div>	
 
-
-                   
-
-
-                     
-
-
-</div>
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 
@@ -199,3 +194,11 @@ $DadosCurso = $Pesquisa->DadosCurso();
 
 ?>
 
+<!--  AREA DO CÓDIGO DO CHAT -->
+<?php
+$busca= $db->select("SELECT script_chat FROM configuracoes ");
+if($db->rows($busca)){
+	$x= $db->expand($busca);
+	echo $x['script_chat'];
+}
+?> 

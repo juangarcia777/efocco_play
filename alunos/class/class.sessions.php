@@ -41,12 +41,13 @@ class SESSION{
 
 	public function Logout(){
 		@session_start();
-		@session_cache_expire(1800000); 
-		unset($_SESSION['UserLogadoAVA']);	
-		unset($_SESSION['CursoSelecionadoAVA']);	
+		@session_cache_expire(1800000);
+		unset($_SESSION['UserLogadoAVA']);
+		unset($_SESSION['CursoSelecionadoAVA']);
 		unset($_SESSION['QuestionarioSelecionadoAVA']);	
 		unset($_SESSION['perguntas']);
-				
+		unset($_SESSION['infos_gerais']);
+		unset($_SESSION['email_existe']);
 		header("Location: acesso");
 	}
 
@@ -69,7 +70,21 @@ class SESSION{
 				}
 			    $i++;
 			}			
-		} 
+		}
+		
+		
+		$busca_confs= $db->select("SELECT * FROM configuracoes");
+			if($db->rows($busca_confs)) {
+			$results= $db->expand($busca_confs);
+			
+			$_SESSION['infos_gerais'] = Array(
+				'ponto_media'=> $results['ponto_media'],
+				'nome_escola'=> $results['nome_escola'],
+				'info_pdf' => $results['info_pdf'],
+				'link_area_aluno' => $results['link_area_aluno'],
+				'script_chat' => $results['script_chat']
+			);
+		}
 
 
 		$hoje = date("Y-m-d");
@@ -86,8 +101,8 @@ class SESSION{
 			//Local para criação de sessão de duvidas
 			//--------------------------------------------//
 			$busca_duvidas= $db->select("SELECT COUNT(id_aluno) AS qt FROM suporte_plataforma 
-										WHERE id_aluno='$id_logado' 
-										AND lido=0 AND resposta != '' ");
+										WHERE id_aluno='$id_logado'
+										AND lido= 0 AND resposta != '' ");
 
 			if($db->rows($busca_duvidas)){
 			 	$n= $db->expand($busca_duvidas);

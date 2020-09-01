@@ -12,7 +12,7 @@ $nome_professor_resposta = $line['nome'];
 
 */
 
-$grava = $db->select("UPDATE suporte_plataforma SET resposta= '$resposta',data_resposta= '$agora' WHERE id= '$id' LIMIT 1");
+$grava = $db->select("UPDATE suporte_plataforma SET resposta= '$resposta',data_resposta= '$agora', lido=1 WHERE id= '$id' LIMIT 1");
 
 //SESSIONS DE AVISO//
 $_SESSION['aviso-tipo-ava'] = 'success';

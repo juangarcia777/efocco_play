@@ -77,9 +77,8 @@ class SESSION{
 			$_SESSION['SistemaLogadoAVA'] = 1;
 			header("Location: home");
 			exit();
-		}
+		}		
 
-		
 
 		$sel = $db->select("SELECT $auth, turma_coordenador FROM $table WHERE $query LIMIT 1");
 		if($db->rows($sel)){
@@ -92,7 +91,6 @@ class SESSION{
 		} else {			
 			$_SESSION['ErrorAVA'] = 'Dados inválidos, tente novamente.';
 			header("Location: acesso");
-			
 		}
 		
 	}

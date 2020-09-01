@@ -258,6 +258,26 @@
 </div>	
 </div>
 
+
+
+<?php 
+
+		$busca_desalocadas= $db->select("SELECT COUNT(*) AS total FROM aula AS t1
+		WHERE NOT EXISTS (SELECT * FROM aulas_alocadas AS t2 WHERE t1.id = t2.id_aula);");
+
+		$results= $db->expand($busca_desalocadas);
+
+?>
+
+<a href="aulas_desalocadas">
+	<div class="aulas-desalocadas"><i class="fa fa-book"></i>
+		<span class="contador-desalocadas"><span class="total-d"><?php echo $results['total'] ?></span></span>
+	</div>
+</a>
+
+
+
+
 <a href="cria-nova-aula" class="add-aula">
     <div class="new_aula_button"><i class="fa  fa-plus"></i></div>
 </a>

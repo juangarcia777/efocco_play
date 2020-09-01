@@ -294,15 +294,16 @@ class PESQUISAS{
 		
 		@session_start();
 		$db = new DB();  		
-		$id_logado = $_SESSION['UserLogadoAVA'];  	  		
+		$id_logado = $_SESSION['UserLogadoAVA'];
+		$hoje= date('Y-m-d'); 	  		
 		 
 		$sel = $db->select("SELECT A.*, B.id AS existe , B.data AS data_entregado
-							FROM trabalhos AS A
-							LEFT JOIN entrega_trabalhos AS B
-							ON A.id = B.id_trabalho
-							WHERE A.id_aula='$id_aula'");
+		FROM trabalhos AS A
+		LEFT JOIN entrega_trabalhos AS B
+		ON A.id = B.id_trabalho
+		WHERE A.id_aula='$id_aula' AND '$hoje' <= A.limite_data");
 		if($db->rows($sel)){
-			return $sel;		
+			return $sel;	
 		} else {
 			return '';		
 		}	

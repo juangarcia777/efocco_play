@@ -39,7 +39,7 @@ require("config.php");
                   	<h6>SISTEMA EM ATUALIZAÇÃO</h6>
                     <p class="info-login">Bom dia, estamos atualizando nossa plataforma para melhorar seu aprendizado.
                     	<br><br>
-                    	Nossa previsão de retorno é hoje <b><?php echo date("d/m"); ?> às 12hs.</b>
+                    	Nossa previsão de retorno é hoje <b><?php echo date("d/m"); ?> às 13hs.</b>
 
                     </p>
                   </div>

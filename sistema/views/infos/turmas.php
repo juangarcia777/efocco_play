@@ -137,14 +137,15 @@
 
 																<a href="infos_alunos/'.$linha_aluno['id'].'" class="btn btn-primary btn-icon-anim btn-square" style="float:right;"><i class="icon-eye"></i></a>
 
-																<a href="monta_pdf/'.$id.'/'.$id_curso.'/'.$linha_aluno['id'].'" class="btn btn-primary btn-icon-anim btn-square" style="float:right;margin-right:10px"><i class="fa fa-file"></i></a>
-
+																
 																</td>';
 															echo '</tr>';
 
 														}
 						
 													?>
+
+													<!-- <a href="monta_pdf/'.$id.'/'.$id_curso.'/'.$linha_aluno['id'].'" class="btn btn-primary btn-icon-anim btn-square" style="float:right;margin-right:10px"><i class="fa fa-file"></i></a>  BOTÂO DE GERAÇÃO DE RELATÓRIO DO ALUNO (EM MANUTENÇÃO) -->
 														
 												</tbody>
 											</table>
